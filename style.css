@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #89cff0, #ffd700);
+    padding: 10px;
+}
+
+.todo-app {
+    max-width: 600px;
+    background-color: #ffffff;
+    margin: 80px auto;
+    padding: 40px 30px 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.todo-app:hover {
+    transform: scale(1.02);
+}
+
+.todo-app h2 {
+    color: #4a4e69;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.todo-app h2 img {
+    width: 40px;
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f4f4f9;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    color: #333;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 12px 40px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #ff6363;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e84545;
+}
+
+ul li {
+    list-style: none;
+    font-size: 18px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+ul li:hover {
+    background-color: #f1f1f1;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 14px;
+    left: 16px;
+}
+
+ul li.checked {
+    color: #9c9c9c;
+    text-decoration: line-through;
+    background-color: #ececec;
+}
+
+ul li.checked::before {
+    background-image: url(images/checked.png);
+}
+
+ul li span {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    color: #e84545;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+ul li span:hover {
+    background: #ffe3e3;
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Stilovi za dark mode */
+body.dark {
+    background-color: #121212; 
+    color: #ffffff; 
+}
+
+body.dark .todo-app {
+    background-color: #1e1e1e; 
+    color: #ffffff;
+}
+
+body.dark .todo-app h2{
+    color: #ffffff;
+}
+
+body.dark .row {
+    background-color: #333333; 
+    border: 1px solid #444444; 
+}
+
+body.dark input {
+    color: #ffffff;
+}
+
+body.dark button {
+    background-color: #555555; 
+    color: #ffffff;
+}
+
+body.dark ul li {
+    background-color: #1e1e1e; 
+    border: 1px solid #444444; 
+    color: #ffffff;
+}
+
+body.dark ul li.checked {
+    background-color: #333333; 
+    color: #aaaaaa;
+}
+
+.dark-mode-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dark-mode-btn {
+    padding: 12px 40px;
+    color: #ffffff;
+    background-color: #ff6363;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode-btn:hover {
+    background-color: #e84545;
+}
